@@ -66,3 +66,8 @@ F:\Code\FruitStack\server\FruitStack\obj\Debug\net7.0\refint\FruitStack.dll
 F:\Code\FruitStack\server\FruitStack\obj\Debug\net7.0\FruitStack.pdb
 F:\Code\FruitStack\server\FruitStack\obj\Debug\net7.0\FruitStack.genruntimeconfig.cache
 F:\Code\FruitStack\server\FruitStack\obj\Debug\net7.0\ref\FruitStack.dll
+F:\Code\FruitStack\server\FruitStack\bin\Debug\net7.0\FruitStack.Infrastructure.dll
+F:\Code\FruitStack\server\FruitStack\bin\Debug\net7.0\FruitStack.Infrastructure.pdb
+F:\Code\FruitStack\server\FruitStack\bin\Debug\net7.0\Newtonsoft.Json.dll
+F:\Code\FruitStack\server\FruitStack\bin\Debug\net7.0\AutoMapper.dll
+F:\Code\FruitStack\server\FruitStack\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

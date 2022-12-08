@@ -1,4 +1,5 @@
-﻿using FruitStack.Models.Constans;
+﻿using FruitStack.Infrastructure.Interfaces;
+using FruitStack.Models.Constans;
 using FruitStack.Models.Responses;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,18 +10,17 @@ namespace FruitStack.Controllers
     [ApiController]
     public class FruitController : ControllerBase
     {
-        private readonly HttpClient _httpClient;
+        private readonly IFruitService _fruitService;
 
-        public FruitController(IHttpClientFactory httpClient)
+        public FruitController(IFruitService fruitService)
         {
-            _httpClient = httpClient.CreateClient(FruityviceConstans.Client);
+            _fruitService = fruitService;
         }
 
         [HttpGet]
         public async Task<ActionResult<FruitResponse>> GetAllFruits()
         {
-            var result = await _httpClient.GetAsync("/api/fruit/all");
-            var fruits = await result.Content.ReadFromJsonAsync<IEnumerable<FruitResponse>>();
+            var fruits = await _fruitService.GetFruitListAsync();
 
             return Ok(fruits);
         }

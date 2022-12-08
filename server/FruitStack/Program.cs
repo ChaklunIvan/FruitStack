@@ -1,11 +1,18 @@
 using FruitStack.Extensions;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //Configure services
-builder.Services.AddControllers()
-       .Services.AddSwaggerGenerator()
-                .AddHttpFruityviceClient(builder.Configuration);
+builder.Services
+    .AddControllers()
+    .Services
+    .AddServices()
+    .AddSwaggerGenerator()
+    .AddHttpFruityviceClient(builder.Configuration)
+    .AddHttpUnsplashClient(builder.Configuration)
+    .AddAutoMapper(typeof(Program));
+
 var app = builder.Build();
 
 //Configure middleware

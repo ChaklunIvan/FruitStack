@@ -4,7 +4,7 @@ export interface Fruit{
   family: string;
   genus: string;
   order: string;
-  nutrition: {
+  nutritions: {
     carbohydrates: number;
     protein: number;
     fat: number;
