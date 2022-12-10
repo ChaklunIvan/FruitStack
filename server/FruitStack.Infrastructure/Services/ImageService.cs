@@ -22,10 +22,10 @@ namespace FruitStack.Infrastructure.Services
 
         public async Task<IEnumerable<string>> GetImageAsync(string name, int items)
         {
-            var result = await _httpClient.GetAsync($"/search/photos?query={name}&page=1&per_page={items}&client_id={_accessKey}");
+            var result = await _httpClient.GetAsync($"/search/photos?query={name}&page=1&per_page={items}&client_id={_accessKey}&");
             var json = await result.Content.ReadAsStringAsync();
             var jObject = JObject.Parse(json);
-            var image = jObject["results"].Select(x => x["urls"].Value<string>("raw"));
+            var image = jObject["results"].Select(x => x["urls"].Value<string>("small"));
 
             return image;
         }

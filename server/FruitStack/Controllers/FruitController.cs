@@ -1,7 +1,6 @@
-﻿using FruitStack.Infrastructure.Interfaces;
-using FruitStack.Models.Constans;
+﻿using ArtSpawn.Models.Requests;
+using FruitStack.Infrastructure.Interfaces;
 using FruitStack.Models.Responses;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FruitStack.Controllers
@@ -18,9 +17,9 @@ namespace FruitStack.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<FruitResponse>> GetAllFruits()
+        public async Task<ActionResult<FruitResponse>> GetAllFruits([FromQuery]PagingRequest pagingRequest, CancellationToken cancellationToken)
         {
-            var fruits = await _fruitService.GetFruitListAsync();
+            var fruits = await _fruitService.GetFruitListAsync(pagingRequest, cancellationToken);
 
             return Ok(fruits);
         }

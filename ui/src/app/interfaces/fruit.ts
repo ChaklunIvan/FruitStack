@@ -1,6 +1,5 @@
 export interface Fruit{
   name: string;
-  id: number;
   family: string;
   genus: string;
   order: string;
@@ -9,6 +8,7 @@ export interface Fruit{
     protein: number;
     fat: number;
     calories: number;
-    sugar: number
+    sugar: number;
   }
+  imageUrls: any[];
 }

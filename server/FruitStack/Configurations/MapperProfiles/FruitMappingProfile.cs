@@ -9,7 +9,7 @@ namespace FruitStack.Configurations.MapperProfiles
 
         public FruitMappingProfile()
         {
-            CreateMap<FruityviceResponse, FruitResponse>().ForMember(member => member.ImageUrls, opt => opt.MapFrom<ImageResolver>());
+            CreateMap<FruityviceResponse, FruitResponse>();//.ForMember(member => member.ImageUrls, opt => opt.MapFrom<ImageResolver>());
         }
 
     }
@@ -24,7 +24,8 @@ namespace FruitStack.Configurations.MapperProfiles
 
         public IEnumerable<string> Resolve(FruityviceResponse source, FruitResponse destination, IEnumerable<string> destMember, ResolutionContext context)
         {
-            return Task.Run(async () => await _imageService.GetImageAsync(source.Name, 3)).Result;
+            var images = _imageService.GetImageAsync(source.Name, 3).Result;
+            return images;
         }
     }
 }

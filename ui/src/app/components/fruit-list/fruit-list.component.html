@@ -1,6 +1,28 @@
-<ul class="list-group text-xl-center">
-  <li *ngFor="let fruit of fruits" class="list-group-item">
-    Fruit:
-    <h1>{{fruit.name}}</h1>
-  </li>
-</ul>
+<!--<ul class="list-group text-xl-center">-->
+<!--  <li *ngFor="let fruit of fruits" class="list-group-item list-group-horizontal-sm">-->
+<!--    <h1>{{fruit.name}}</h1>-->
+<!--    <div *ngFor="let image of fruit.imageUrls" class="card mb-3" style="width: 18rem;">-->
+<!--      <img [src]="image" class="card-img-top" alt="...">-->
+<!--      <div class="card-body">-->
+<!--        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<div *ngFor="let fruit of fruits" class="container text-center align-content-center align-items-center">
+  <div class="row">
+    <div class="col">{{fruit.name}}</div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img [src]="fruit.imageUrls[0]" class="img-fluid" />
+    </div>
+    <div class="col">
+      <img [src]="fruit.imageUrls[1]" class="img-fluid" />
+    </div>
+    <div class="col">
+      <img [src]="fruit.imageUrls[2]" class="img-fluid" />
+    </div>
+  </div>
+</div>
