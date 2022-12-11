@@ -33,6 +33,7 @@ namespace FruitStack.Infrastructure.Extensions
         /// <typeparam name="TModel"></typeparam>
         /// <param name="source">IEnumerable list of TModel</param>
         /// <param name="pagingRequest">Paging parameters</param>
+        /// <param name="count">Number of all items</param>
         /// <returns>Paged list</returns>
         public static PagedModel<TModel> Paginate<TModel>(this IEnumerable<TModel> source, PagingRequest pagingRequest, int count) where TModel : class
         {
@@ -74,7 +75,7 @@ namespace FruitStack.Infrastructure.Extensions
         /// <typeparam name="TModel"></typeparam>
         /// <param name="items">Items on page</param>
         /// <param name="pagingRequest">Paging parameters</param>
-        /// <param name="count"></param>
+        /// <param name="count">Number of all items</param>
         /// <returns>instance of PagedModel<TModel></returns>
         private static PagedModel<TModel> ToPagedModel<TModel>(this IEnumerable<TModel> items, PagingRequest pagingRequest, int count) where TModel : class
         {
