@@ -11,7 +11,8 @@ builder.Services
     .AddSwaggerGenerator()
     .AddHttpFruityviceClient(builder.Configuration)
     .AddHttpUnsplashClient(builder.Configuration)
-    .AddAutoMapper(typeof(Program));
+    .AddAutoMapper(typeof(Program))
+    .AddMemoryCache();
 
 var app = builder.Build();
 
