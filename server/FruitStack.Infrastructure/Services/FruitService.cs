@@ -1,6 +1,7 @@
 ﻿using ArtSpawn.Models.Requests;
 using AutoMapper;
 using FruitStack.Infrastructure.Extensions;
+using FruitStack.Infrastructure.Helpers;
 using FruitStack.Infrastructure.Interfaces;
 using FruitStack.Models;
 using FruitStack.Models.Constans;
@@ -15,13 +16,13 @@ namespace FruitStack.Infrastructure.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IMapper _mapper;
-        private readonly IMemoryCache _memoryCache;
+        private readonly ICacheManager<FruitResponse> _cacheManager;
 
-        public FruitService(IHttpClientFactory httpClient, IMapper mapper, IMemoryCache memoryCache)
+        public FruitService(IHttpClientFactory httpClient, IMapper mapper, ICacheManager<FruitResponse> cacheManager)
         {
             _httpClient = httpClient.CreateClient(FruityviceConstans.Client);
             _mapper = mapper;
-            _memoryCache = memoryCache;
+            _cacheManager = cacheManager;
         }
 
         public async Task<PagedModel<FruitResponse>> GetFruitListAsync(PagingRequest pagingRequest, CancellationToken cancellationToken)
@@ -33,7 +34,7 @@ namespace FruitStack.Infrastructure.Services
 
             var fruits = _mapper.Map<IEnumerable<FruitResponse>>(pagedApiResponse);
             
-            var pagedFruits = fruits.Paginate(pagingRequest);
+            var pagedFruits = fruits.Paginate(pagingRequest, apiResponse.Count());
 
             return pagedFruits;
         }

@@ -31,6 +31,7 @@ namespace FruitStack.Extensions
                 var settings = services.BuildServiceProvider().GetRequiredService<IOptions<UnsplashSettings>>();
 
                 httpClient.BaseAddress = new Uri(settings.Value.BaseUrl);
+
             });
             return services;
         }

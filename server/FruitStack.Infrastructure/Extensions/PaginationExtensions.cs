@@ -34,18 +34,15 @@ namespace FruitStack.Infrastructure.Extensions
         /// <param name="source">IEnumerable list of TModel</param>
         /// <param name="pagingRequest">Paging parameters</param>
         /// <returns>Paged list</returns>
-        public static PagedModel<TModel> Paginate<TModel>(this IEnumerable<TModel> source, PagingRequest pagingRequest) where TModel : class
+        public static PagedModel<TModel> Paginate<TModel>(this IEnumerable<TModel> source, PagingRequest pagingRequest, int count) where TModel : class
         {
-            var count = source.Count();
-            var items = source.ItemsOnPage(pagingRequest);
-
-            var page = items.ToPagedModel(pagingRequest, count);
+            var page = source.ToPagedModel(pagingRequest, count);
 
             return page;
         }
 
         /// <summary>
-        /// Calculate items on page
+        /// Calculate items on page.
         /// </summary>
         /// <typeparam name="TModel"></typeparam>
         /// <param name="source">IEnumerable list of TModel</param>
@@ -86,7 +83,7 @@ namespace FruitStack.Infrastructure.Extensions
                 CurrentPage = pagingRequest.PageNumber,
                 PageSize = pagingRequest.PageSize,
                 TotalCount = count,
-                TotalPages = pagingRequest.PageSize != 0 ? (int)Math.Ceiling(count / (double)pagingRequest.PageSize) : pagingRequest.PageSize,
+                TotalPages = (int)Math.Ceiling(count / (double)pagingRequest.PageSize),
                 Items = items
             };
 

@@ -4,5 +4,6 @@
     {
         public const string Section = "Unsplash";
         public const string Client = "UnsplashClient";
+
     }
 }
