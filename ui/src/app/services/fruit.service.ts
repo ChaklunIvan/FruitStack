@@ -9,7 +9,6 @@ const serverUrl = "https://localhost:7247/api/";
 })
 export class FruitService {
 
-
   constructor(private http: HttpClient) { }
 
   getFruitList(){

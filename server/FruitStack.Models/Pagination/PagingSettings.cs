@@ -1,6 +1,6 @@
-﻿namespace ArtSpawn.Models.Requests
+﻿namespace FruitStack.Models.Pagination
 {
-    public class PagingRequest
+    public class PagingSettings
     {
         /// <summary>
         /// Constant number of maximum page size
@@ -10,7 +10,7 @@
         /// <summary>
         /// Number of current page. Default = 1
         /// </summary>
-        public int PageNumber { get; set; } = 1;
+        public int CurrentPage { get; set; } = 1;
 
         /// <summary>
         /// Default page size field
@@ -24,7 +24,7 @@
         public int PageSize
         {
             get { return _pageSize; }
-            set { _pageSize = (value > maxPageSize) ? maxPageSize : value; }
+            set { _pageSize = value > maxPageSize ? maxPageSize : value; }
         }
     }
 }

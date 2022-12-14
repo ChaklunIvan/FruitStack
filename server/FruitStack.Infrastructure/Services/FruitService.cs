@@ -1,14 +1,9 @@
-﻿using ArtSpawn.Models.Requests;
-using AutoMapper;
-using FruitStack.Infrastructure.Extensions;
-using FruitStack.Infrastructure.Helpers;
+﻿using AutoMapper;
 using FruitStack.Infrastructure.Interfaces;
-using FruitStack.Models;
 using FruitStack.Models.Constans;
+using FruitStack.Models.Pagination;
 using FruitStack.Models.Responses;
-using Microsoft.Extensions.Caching.Memory;
 using System.Net.Http.Json;
-using System.Security.Cryptography;
 
 namespace FruitStack.Infrastructure.Services
 {
@@ -16,27 +11,33 @@ namespace FruitStack.Infrastructure.Services
     {
         private readonly HttpClient _httpClient;
         private readonly IMapper _mapper;
-        private readonly ICacheManager<FruitResponse> _cacheManager;
 
-        public FruitService(IHttpClientFactory httpClient, IMapper mapper, ICacheManager<FruitResponse> cacheManager)
+        public FruitService(IHttpClientFactory httpClient, IMapper mapper)
         {
             _httpClient = httpClient.CreateClient(FruityviceConstans.Client);
             _mapper = mapper;
-            _cacheManager = cacheManager;
         }
 
-        public async Task<PagedModel<FruitResponse>> GetFruitListAsync(PagingRequest pagingRequest, CancellationToken cancellationToken)
+        public async Task<PagedModel<FruitResponse>> GetFruitListAsync(PagingSettings pagingSettings, CancellationToken cancellationToken)
         {
             var result = await _httpClient.GetAsync("/api/fruit/all", cancellationToken);
             var apiResponse = await result.Content.ReadFromJsonAsync<IEnumerable<FruityviceResponse>>(cancellationToken: cancellationToken);
 
-            var pagedApiResponse = apiResponse.ItemsOnPage(pagingRequest);
+            var pagedApiResponse = apiResponse.Skip((pagingSettings.CurrentPage - 1) * pagingSettings.PageSize)
+                                              .Take(pagingSettings.PageSize);
 
             var fruits = _mapper.Map<IEnumerable<FruitResponse>>(pagedApiResponse);
-            
-            var pagedFruits = fruits.Paginate(pagingRequest, apiResponse.Count());
 
-            return pagedFruits;
+            var pagedModel = new PagedModel<FruitResponse>()
+            {
+                CurrentPage = pagingSettings.CurrentPage,
+                PageSize = pagingSettings.PageSize,
+                Items = fruits,
+                TotalCount = fruits.Count(),
+                TotalPages = (int)Math.Ceiling(fruits.Count() / (double)pagingSettings.PageSize)
+            };
+
+            return pagedModel;
         }
     }
 }

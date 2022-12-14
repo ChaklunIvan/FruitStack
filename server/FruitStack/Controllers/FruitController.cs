@@ -1,8 +1,8 @@
-﻿using ArtSpawn.Models.Requests;
-using FruitStack.Infrastructure.Interfaces;
-using FruitStack.Models.Constans;
+﻿using FruitStack.Infrastructure.Interfaces;
+using FruitStack.Models.Pagination;
 using FruitStack.Models.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace FruitStack.Controllers
 {
@@ -11,18 +11,20 @@ namespace FruitStack.Controllers
     public class FruitController : ControllerBase
     {
         private readonly IFruitService _fruitService;
-        private readonly ICacheManager<FruitResponse> _cacheManager;
+        private readonly IMemoryCache _memoryCache;
 
-        public FruitController(IFruitService fruitService, ICacheManager<FruitResponse> cacheManager)
+        public FruitController(IFruitService fruitService, IMemoryCache memoryCache)
         {
             _fruitService = fruitService;
-            _cacheManager = cacheManager;
+            _memoryCache = memoryCache;
         }
 
         [HttpGet]
-        public async Task<ActionResult<FruitResponse>> GetAllFruits([FromQuery]PagingRequest pagingRequest, CancellationToken cancellationToken)
+        public async Task<ActionResult<FruitResponse>> GetAllFruits([FromQuery] PagingSettings pagingSettings, CancellationToken cancellationToken)
         {
-            var fruits = await _cacheManager.GetCache(CacheKeyConstans.FruitsKey, () => _fruitService.GetFruitListAsync(pagingRequest, cancellationToken), pagingRequest);
+            var cacheKey = string.Join(", ", pagingSettings.PageSize, pagingSettings.CurrentPage);
+
+            var fruits = await _memoryCache.GetOrCreateAsync(cacheKey, async cache => await _fruitService.GetFruitListAsync(pagingSettings, cancellationToken));
 
             return Ok(fruits);
         }
