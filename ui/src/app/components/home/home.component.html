@@ -1,0 +1,104 @@
+<!-- Carousel -->
+<ngb-carousel *ngIf="images" [interval]="3500" [pauseOnFocus]="true" [pauseOnHover]="false" >
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="center-cropped" [src]="images[0]" alt="Random first slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3 >Fruits</h3>
+      <p>View the list of fruits to find out the name of the species and other information.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="center-cropped" [src]="images[1]" alt="Random second slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>Nutritions</h3>
+      <p>Click on any fruit from the list to view several photos and find out its nutrition.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="center-cropped" [src]="images[2]" alt="Random third slide" />
+    </div>
+    <div class="carousel-caption">
+      <h3>About</h3>
+      <p>Check about page to find out why and how this project was created.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<!-- TextBlock -->
+<div class="container-fluid" style="background: darksalmon">
+  <div class="row align-items-center">
+
+    <!-- Carousel images -->
+    <div class="col-6">
+      <ngb-carousel *ngIf="images" [interval]="3500000">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[0]" alt="Random first slide" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[1]" alt="Random second slide" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[2]" alt="Random third slide" />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+    </div>
+
+    <!-- Text -->
+    <div class="col-6 text-center">
+      <h3>Fruit List</h3>
+      <p>Something about fruits list</p>
+    </div>
+  </div>
+</div>
+<!-- TextBlock -->
+<div class="container-fluid" style="background: teal">
+  <div class="row align-items-center">
+
+    <!-- Text -->
+    <div class="col-6 text-center">
+      <h3>Fruit List</h3>
+      <p>Something about fruits list</p>
+    </div>
+
+    <!-- Carousel images -->
+    <div class="col-6">
+      <ngb-carousel *ngIf="images" [interval]="3500000">
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[0]" alt="Random first slide" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[1]" alt="Random second slide" />
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="center-cropped-2"  [src]="images[2]" alt="Random third slide" />
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    </div>
+  </div>
+</div>
+<footer class="text-center text-lg-start " style="color: azure">
+  <!-- Copyright -->
+  <div class=" text-center p-3" style="background-color:cadetblue;">
+    © 2022 Copyright:
+    <a style="color: azure" href="https://www.linkedin.com/in/chaklunivan/">Chaklun Ivan</a>
+  </div>
+  <!-- Copyright -->
+</footer>

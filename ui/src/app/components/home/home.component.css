@@ -1,0 +1,25 @@
+.center-cropped {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+h3{
+  font-family: "Georgia";
+  color: azure;
+}
+
+p{
+  font-family: Georgia, "Lucida Console", monospace;
+  font-size: 18px;
+  color: azure;
+}
+
+.center-cropped-2 {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  scale: 0.5;
+}
+
+
