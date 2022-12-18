@@ -31,67 +31,103 @@
 
 <!-- TextBlock -->
 <div class="container-fluid" style="background: darksalmon">
-  <div class="row align-items-center">
+  <div class="row align-items-center gap-3">
 
+    <div class="col-lg-1"></div>
     <!-- Carousel images -->
-    <div class="col-6">
-      <ngb-carousel *ngIf="images" [interval]="3500000">
+    <div class="col-lg-5 col-md-1 p-3">
+      <ngb-carousel *ngIf="images"
+                    [interval]="3000"
+                    [showNavigationArrows]="false"
+                    [showNavigationIndicators]="false"
+                    [pauseOnHover]="false"
+                    [pauseOnFocus]="false">
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[0]" alt="Random first slide" />
+          <img class="center-cropped-2"  [src]="images[5]" alt="Random first slide" />
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[1]" alt="Random second slide" />
+          <img class="center-cropped-2"  [src]="images[4]" alt="Random second slide" />
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[2]" alt="Random third slide" />
+          <img class="center-cropped-2"  [src]="images[3]" alt="Random third slide" />
         </div>
       </ng-template>
     </ngb-carousel>
     </div>
 
     <!-- Text -->
-    <div class="col-6 text-center">
-      <h3>Fruit List</h3>
-      <p>Something about fruits list</p>
+    <div class="col-lg-4 col-md-1 text-center p-3">
+      <h3 style="opacity: 0.8">Fruit List:</h3>
+      <br>
+      <p>On the Fruits page, anyone can view a list with information about the fruit.<br>
+        The list comes from the server which is made with .Net.<br>
+        Fruits come to the server using the api called "fruityvice"<br>
+        You can click on any fruit icon and go to the fruityvice.com<br>
+      </p>
+      <br>
+      <a class="nav-link" href="https://www.fruityvice.com/#2" target="_blank">
+        <img class="img-fluid img-hover" style="width: 50px; margin-right: 10px" src="https://cdn-icons-png.flaticon.com/512/3143/3143645.png" alt="">
+        <img class="img-fluid img-hover" style="width: 50px; margin-right: 10px" src="https://cdn-icons-png.flaticon.com/512/9092/9092419.png" alt="">
+        <img class="img-fluid img-hover" style="width: 50px; margin-right: 10px" src="https://cdn-icons-png.flaticon.com/512/6738/6738909.png" alt="">
+      </a>
     </div>
+    <div class="col-lg-2"></div>
   </div>
 </div>
 <!-- TextBlock -->
 <div class="container-fluid" style="background: teal">
-  <div class="row align-items-center">
+  <div class="row align-items-center gap-3">
 
+    <div class="col-lg-2 p-3"></div>
     <!-- Text -->
-    <div class="col-6 text-center">
-      <h3>Fruit List</h3>
-      <p>Something about fruits list</p>
+    <div style="opacity: 0.8" class="col-lg-4 col-md-1 text-center">
+      <h3>Nutritions:</h3>
+      <br>
+      <p>If you click on any fruit from the fruit list.
+        Then go to the page of this fruit.<br>
+        There you will find additional information about him, as well as nutrition.<br>
+        With which you can create the perfect menu, or do nothing with it.<br>
+        I also wanted to clarify where I get all these wonderful photos from.<br>
+        With the help of the service "unsplash".<br>
+        I leave a link to the site below.
+      </p>
+      <br>
+      <a class="nav-link" href="https://unsplash.com/" target="_blank">
+        <img class="img-fluid img-hover" style="width: 50px; margin-right: 10px" src="https://cdn-icons-png.flaticon.com/512/5968/5968743.png" alt="">
+      </a>
     </div>
 
     <!-- Carousel images -->
-    <div class="col-6">
-      <ngb-carousel *ngIf="images" [interval]="3500000">
+    <div class="col-lg-5 col-md-1 p-3">
+      <ngb-carousel *ngIf="images"
+                    [interval]="3000"
+                    [showNavigationArrows]="false"
+                    [showNavigationIndicators]="false"
+                    [pauseOnHover]="false"
+                    [pauseOnFocus]="false">
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[0]" alt="Random first slide" />
+          <img class="center-cropped-2"  [src]="images[8]" alt="Random first slide" />
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[1]" alt="Random second slide" />
+          <img class="center-cropped-2"  [src]="images[7]" alt="Random second slide" />
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[2]" alt="Random third slide" />
+          <img class="center-cropped-2"  [src]="images[6]" alt="Random third slide" />
         </div>
       </ng-template>
     </ngb-carousel>
-
     </div>
+    <div class="col-lg-1"></div>
   </div>
 </div>
 <footer class="text-center text-lg-start " style="color: azure">
