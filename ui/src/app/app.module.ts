@@ -7,18 +7,21 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FruitListComponent } from './components/fruit-list/fruit-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FruitListComponent
+    FruitListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
