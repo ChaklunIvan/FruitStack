@@ -1,0 +1,12 @@
+.center-cropped {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+}
+
+.center-cropped-card {
+  width: 100%;
+  height: 15vh;
+  object-fit: cover;
+}

@@ -1,8 +1,8 @@
 <!-- Carousel -->
-<ngb-carousel *ngIf="images" [interval]="3500" [pauseOnFocus]="true" [pauseOnHover]="false" >
+<ngb-carousel [interval]="3500" [pauseOnFocus]="true" [pauseOnHover]="false" >
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img class="center-cropped" [src]="images[0]" alt="Random first slide" />
+      <img class="center-cropped" src="./assets/images/homecarousel_blueorange.png" alt="Random first slide" routerLink="/fruit-list"/>
     </div>
     <div class="carousel-caption">
       <h3 >Fruits</h3>
@@ -11,7 +11,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img class="center-cropped" [src]="images[1]" alt="Random second slide" />
+      <img class="center-cropped" src="./assets/images/homecarousel_greyphslices.png" alt="Random second slide" routerLink="/fruit-list"/>
     </div>
     <div class="carousel-caption">
       <h3>Nutritions</h3>
@@ -20,7 +20,7 @@
   </ng-template>
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
-      <img class="center-cropped" [src]="images[2]" alt="Random third slide" />
+      <img class="center-cropped" src="./assets/images/homecarousel_durian.png" alt="Random third slide" routerLink=""/>
     </div>
     <div class="carousel-caption">
       <h3>About</h3>
@@ -36,25 +36,24 @@
     <div class="col-lg-1"></div>
     <!-- Carousel images -->
     <div class="col-lg-5 col-md-1 p-3">
-      <ngb-carousel *ngIf="images"
-                    [interval]="3000"
+      <ngb-carousel [interval]="3000"
                     [showNavigationArrows]="false"
                     [showNavigationIndicators]="false"
                     [pauseOnHover]="false"
                     [pauseOnFocus]="false">
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[5]" alt="Random first slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel2_mango.png" alt="Random first slide" routerLink="/fruit-list"/>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[4]" alt="Random second slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel2_cherry.png" routerLink="/fruit-list"/>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[3]" alt="Random third slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel2_pinkbanana.png" routerLink="/fruit-list"/>
         </div>
       </ng-template>
     </ngb-carousel>
@@ -62,7 +61,7 @@
 
     <!-- Text -->
     <div class="col-lg-4 col-md-1 text-center p-3">
-      <h3 style="opacity: 0.8">Fruit List:</h3>
+      <h3 style="opacity: 0.8; cursor: pointer" routerLink="/fruit-list">Fruit List:</h3>
       <br>
       <p>On the Fruits page, anyone can view a list with information about the fruit.<br>
         The list comes from the server which is made with .Net.<br>
@@ -86,7 +85,7 @@
     <div class="col-lg-2 p-3"></div>
     <!-- Text -->
     <div style="opacity: 0.8" class="col-lg-4 col-md-1 text-center">
-      <h3>Nutritions:</h3>
+      <h3 style="cursor: pointer" routerLink="/fruit-list">Nutritions:</h3>
       <br>
       <p>If you click on any fruit from the fruit list.
         Then go to the page of this fruit.<br>
@@ -104,25 +103,24 @@
 
     <!-- Carousel images -->
     <div class="col-lg-5 col-md-1 p-3">
-      <ngb-carousel *ngIf="images"
-                    [interval]="3000"
+      <ngb-carousel [interval]="3000"
                     [showNavigationArrows]="false"
                     [showNavigationIndicators]="false"
                     [pauseOnHover]="false"
                     [pauseOnFocus]="false">
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[8]" alt="Random first slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel3_waterpineapple.png" alt="Random first slide" routerLink="/fruit-list"/>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[7]" alt="Random second slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel3_lime.png" alt="Random second slide" routerLink="/fruit-list"/>
         </div>
       </ng-template>
       <ng-template ngbSlide>
         <div class="picsum-img-wrapper">
-          <img class="center-cropped-2"  [src]="images[6]" alt="Random third slide" />
+          <img class="center-cropped-2"  src="./assets/images/homecarousel3_strawberry.png" routerLink="/fruit-list"/>
         </div>
       </ng-template>
     </ngb-carousel>
