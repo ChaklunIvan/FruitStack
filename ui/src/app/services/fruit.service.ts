@@ -16,4 +16,5 @@ export class FruitService {
     return this.http.get<{items: Fruit[]}>(serverUrl + "fruits" + "?CurrentPage=1&PageSize=10")
       .pipe(map((data) => data.items));
   }
+
 }

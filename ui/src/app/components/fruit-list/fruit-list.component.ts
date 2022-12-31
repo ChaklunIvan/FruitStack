@@ -8,6 +8,8 @@ import {Fruit} from "../../interfaces/fruit";
   styleUrls: ['./fruit-list.component.css']
 })
 export class FruitListComponent implements OnInit{
+  page = 1;
+  pageSize = 10;
 
   fruits: Fruit[] = [];
 

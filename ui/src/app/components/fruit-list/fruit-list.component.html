@@ -1,25 +1,32 @@
-<body>
-<!--background image-->
-  <img class="center-cropped" src="./assets/images/fruitlist_background.png" alt="">
-
-<!--fruit cards-->
+<app-navbar></app-navbar>
+<div class="container-fluid" style="background: teal">
   <div class="container">
-    <div class="row" style="position: absolute; margin-top: 100px; margin-right: 0px; margin-left: -100px">
-      <div class="col-2 mx-2 my-2 py-1 card" *ngFor="let fruit of fruits">
-        <img [src]="fruit.imageUrls[1]" class="card-img-top center-cropped-card" alt="Fissure in Sandstone"/>
-        <div class="card-body">
-          <h5 class="card-title">{{fruit.name}}</h5>
-          <p class="card-text">Order: {{fruit.order}}<br>
-                               Genus: {{fruit.genus}}<br>
-                               Family: {{fruit.family}}</p>
-          <a href="#!" class="btn btn-primary btn-sm">Nutritions
-            <i class="bi bi-activity"></i>
-          </a>
+    <div class="row row-cols-md-5 g-4" style="margin-top: 100px">
+      <div class="col-md" *ngFor="let fruit of fruits">
+        <div class="card">
+          <img [src]="fruit.imageUrls[0]" class="card-img-top center-cropped-card" alt="Skyscrapers"/>
+          <div class="card-body">
+            <h5 class="card-title">{{fruit.name}}</h5>
+            <p class="card-text">
+              {{fruit.family}}
+            </p>
+          </div>
         </div>
       </div>
     </div>
+    <p>Restricted size with rotation:</p>
+    <ngb-pagination
+      [collectionSize]="120"
+      [(page)]="page"
+      [maxSize]="5"
+      [rotate]="true"
+      [boundaryLinks]="true"
+    ></ngb-pagination>
   </div>
+</div>
 
-</body>
+
+
+
 
 
