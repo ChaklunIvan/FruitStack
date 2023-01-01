@@ -4,6 +4,7 @@ import {Fruit} from "../interfaces/fruit";
 import {map} from "rxjs";
 
 const serverUrl = "https://localhost:7247/api/";
+const pageSize = 10;
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,9 @@ export class FruitService {
 
   constructor(private http: HttpClient) { }
 
-  getFruitList() {
-    return this.http.get<{items: Fruit[]}>(serverUrl + "fruits" + "?CurrentPage=1&PageSize=10")
-      .pipe(map((data) => data.items));
+  getFruitList(pageNumber: number) {
+    return this.http.get(serverUrl + "fruits" + "?CurrentPage=" + pageNumber + "&PageSize=" + pageSize);
   }
+
 
 }

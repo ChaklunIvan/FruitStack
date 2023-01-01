@@ -2,14 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FruitService } from "../../services/fruit.service";
 import {Fruit} from "../../interfaces/fruit";
 
+
 @Component({
   selector: 'app-fruit-list',
   templateUrl: './fruit-list.component.html',
   styleUrls: ['./fruit-list.component.css']
 })
 export class FruitListComponent implements OnInit{
-  page = 1;
-  pageSize = 10;
+
+  currentPage: number = 1;
+  pageSize: number = 10;
+  totalCount: number = 0;
 
   fruits: Fruit[] = [];
 
@@ -20,6 +23,14 @@ export class FruitListComponent implements OnInit{
   }
 
   getFruits(): void{
-    this.fruitService.getFruitList().subscribe(fruits => this.fruits = fruits);
+    this.fruitService.getFruitList(this.currentPage).subscribe((result: any) => {
+      this.fruits = result.items;
+      this.totalCount = result.totalCount
+    })
+  }
+
+  pageChanged(event: number) {
+    this.currentPage = event;
+    this.getFruits();
   }
 }

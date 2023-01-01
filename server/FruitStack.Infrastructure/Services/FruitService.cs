@@ -33,8 +33,8 @@ namespace FruitStack.Infrastructure.Services
                 CurrentPage = pagingSettings.CurrentPage,
                 PageSize = pagingSettings.PageSize,
                 Items = fruits,
-                TotalCount = fruits.Count(),
-                TotalPages = (int)Math.Ceiling(fruits.Count() / (double)pagingSettings.PageSize)
+                TotalCount = apiResponse.Count(),
+                TotalPages = (int)Math.Ceiling(apiResponse.Count() / (double)pagingSettings.PageSize)
             };
 
             return pagedModel;

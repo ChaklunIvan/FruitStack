@@ -10,3 +10,30 @@
   height: 25vh;
   object-fit: cover;
 }
+
+
+ngb-pagination ::ng-deep .page-item .page-link {
+  color: black;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link {
+  border-color: aliceblue;
+  background-color: teal;
+}
+
+ngb-pagination ::ng-deep .page-link {
+  border-color: aliceblue;
+}
+
+ngb-pagination ::ng-deep  .page-link:focus, .page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem aliceblue;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link:focus, .page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem aliceblue;
+}
+
+ngb-pagination ::ng-deep .page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem aliceblue;
+}
+

@@ -2,7 +2,10 @@
 <div class="container-fluid" style="background: teal">
   <div class="container">
     <div class="row row-cols-md-5 g-4" style="margin-top: 100px">
-      <div class="col-md" *ngFor="let fruit of fruits">
+<!--      <div class="col-md" *ngFor="let fruit of fruits | paginate: {currentPage: this.currentPage,-->
+<!--                                                                        itemsPerPage: this.pageSize,-->
+<!--                                                                        totalItems: this.totalCount}">-->
+        <div class="col-md" *ngFor="let fruit of fruits">
         <div class="card">
           <img [src]="fruit.imageUrls[0]" class="card-img-top center-cropped-card" alt="Skyscrapers"/>
           <div class="card-body">
@@ -14,14 +17,14 @@
         </div>
       </div>
     </div>
-    <p>Restricted size with rotation:</p>
-    <ngb-pagination
-      [collectionSize]="120"
-      [(page)]="page"
-      [maxSize]="5"
-      [rotate]="true"
-      [boundaryLinks]="true"
-    ></ngb-pagination>
+
+
+    <ngb-pagination class="d-flex justify-content-center my-5" [collectionSize]="totalCount" [(page)]="currentPage" aria-label="Custom pagination" (pageChange)="getFruits()">
+      <ng-template ngbPaginationPrevious>Prev</ng-template>
+      <ng-template ngbPaginationNext>Next</ng-template>
+    </ngb-pagination>
+
+
   </div>
 </div>
 
