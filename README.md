@@ -16,7 +16,7 @@
   <h3>What is FruitStack?</h3>
     This is a small pet project about fruits. Made for educational purposes only.
     To study the work of a client-server web application and understand how to work with Api`s.<br>
-    Implemented in the project - receiving and processing data with api, pagination, visual components and much more...
+    Implemented in the project - receiving and processing data with api, pagination, visual components(modals, spinner, custom scrollbar) and much more...
     <h4 style="margin-top="10px"">
     Using technologies such as:
     </h4>
