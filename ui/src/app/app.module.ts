@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FruitListComponent } from './components/fruit-list/fruit-list.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './components/home/home.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AboutComponent } from './components/about/about.component';
+
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppComponent,
     NavbarComponent,
     FruitListComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     NgbModule,
     NgxPaginationModule,
+    NgbToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import {Fruit} from "../interfaces/fruit";
-import {map} from "rxjs";
+import {BehaviorSubject, map} from "rxjs";
 
 const serverUrl = "https://localhost:7247/api/";
 const pageSize = 10;
@@ -10,6 +10,7 @@ const pageSize = 10;
   providedIn: 'root'
 })
 export class FruitService {
+
 
   constructor(private http: HttpClient) { }
 

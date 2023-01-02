@@ -14,7 +14,7 @@ public class ImageResolver : IValueResolver<FruityviceResponse, FruitResponse, I
 
     public IEnumerable<string> Resolve(FruityviceResponse source, FruitResponse destination, IEnumerable<string> destMember, ResolutionContext context)
     {
-        var images = _imageService.GetImageAsync(source.Name, 2).Result;
+        var images = _imageService.GetImageAsync(source.Name, UnsplashConstans.ImageCount).Result;
         return images;
     }
 
