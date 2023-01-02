@@ -1,0 +1,21 @@
+.inline{
+  display: inline;
+}
+
+h1 {
+  color: teal;
+  font-family: Georgia;
+  font-size: 52px;
+  border-bottom: solid;
+  margin: 16px;
+}
+
+h2 {
+  color: teal;
+  font-family: Georgia
+}
+
+h3{
+  color: azure;
+  font-family: Georgia;
+}

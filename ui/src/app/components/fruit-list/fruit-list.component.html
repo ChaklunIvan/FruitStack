@@ -3,11 +3,11 @@
 <div class="container-fluid" style="background: teal">
   <div class="container">
 
-<!-- Spinner loader -->
+    <!-- Spinner loader -->
     <div *ngIf="this.getLoading()" class="cssload-container">
       <div class="cssload-speeding-wheel"></div>
     </div>
-<!--Toast on error-->
+    <!--Toast on error-->
     <div *ngIf="this.getToast()" class="d-flex justify-content-center" style="margin-top: 100px">
       <ngb-toast style="text-align: center; color:  teal; font-size: 28px; font-family: 'Courier New'" [autohide]="false">
         Oops... <br>
@@ -17,14 +17,14 @@
     </div>
 
 
-<!--Card grid-->
+    <!--Card grid-->
     <div class="row row-cols-md-5 g-4" style="margin-top: 100px">
-        <div class="col-md" *ngFor="let fruit of fruits">
+      <div class="col-md" *ngFor="let fruit of fruits">
         <div class="card">
           <img [src]="fruit.imageUrls[0]" class="card-img-top center-cropped-card" alt="Skyscrapers"/>
           <div class="card-body">
 
-            <h5 class="card-title" style="color: grey; font-family: 'Segoe UI Symbol';">{{fruit.name}}</h5>
+            <h5 class="card-title" style="color: Black; font-family: 'Georgia';">{{fruit.name}}</h5>
 
             <div class="d-md-flex justify-content-md-end">
               <button type="button" class="btn" (click)="openVerticallyCentered(content)"><i class="bi bi-info-circle"></i></button>
@@ -37,10 +37,10 @@
               </div>
               <div class="modal-body">
                 <p>Calories: {{fruit.nutritions.calories}}<br>
-                   Carbohydrates: {{fruit.nutritions.carbohydrates}}<br>
-                   Fat: {{fruit.nutritions.fat}}<br>
-                   Protein: {{fruit.nutritions.protein}}<br>
-                   Sugar: {{fruit.nutritions.sugar}}</p>
+                  Carbohydrates: {{fruit.nutritions.carbohydrates}}<br>
+                  Fat: {{fruit.nutritions.fat}}<br>
+                  Protein: {{fruit.nutritions.protein}}<br>
+                  Sugar: {{fruit.nutritions.sugar}}</p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
@@ -53,7 +53,7 @@
     </div>
 
 
-<!--Pagination-->
+    <!--Pagination-->
     <ngb-pagination *ngIf="getPagination()" style="margin-top: 52px" class="d-flex justify-content-center" [collectionSize]="totalCount" [(page)]="currentPage" aria-label="Custom pagination" (pageChange)="getFruits()">
       <ng-template ngbPaginationPrevious >Prev</ng-template>
       <ng-template ngbPaginationNext>Next</ng-template>
@@ -62,6 +62,7 @@
 
   </div>
 </div>
+
 
 
 

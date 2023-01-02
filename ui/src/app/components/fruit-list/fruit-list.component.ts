@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { FruitService } from "../../services/fruit.service";
 import {Fruit} from "../../interfaces/fruit";
 import {BehaviorSubject} from "rxjs";
@@ -10,7 +10,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   templateUrl: './fruit-list.component.html',
   styleUrls: ['./fruit-list.component.css']
 })
-export class FruitListComponent implements OnInit{
+export class FruitListComponent implements OnInit, OnDestroy{
+
+  htmlTag: HTMLElement = document.getElementsByTagName('html')[0];
 
   currentPage: number = 1;
   pageSize: number = 10;
@@ -25,7 +27,12 @@ export class FruitListComponent implements OnInit{
   constructor(private fruitService: FruitService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.htmlTag.classList.add('fruit-page');
     this.getFruits()
+  }
+
+  ngOnDestroy() {
+    this.htmlTag.classList.remove('fruit-page');
   }
 
   getFruits(): void{

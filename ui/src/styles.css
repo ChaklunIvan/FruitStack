@@ -1,5 +1,8 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
-html { background-color: teal; }
+.fruit-page { background-color: teal; }
+
+.about-page {background-color: darksalmon;}
+
 ::-webkit-scrollbar {
   position: absolute;
   background: aliceblue;
