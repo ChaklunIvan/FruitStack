@@ -8,7 +8,6 @@ namespace FruitStack.Configurations.MapperProfiles
 {
     public class FruitMappingProfile : Profile
     {
-
         public FruitMappingProfile()
         {
             CreateMap<FruityviceResponse, FruitResponse>().ForMember(member => member.ImageUrls, opt => opt.MapFrom<ImageResolver>());

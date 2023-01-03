@@ -29,8 +29,5 @@ namespace FruitStack.Infrastructure.Services
 
             return image;
         }
-
-
-
     }
 }
