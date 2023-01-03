@@ -12,25 +12,28 @@
   Hello There ✌️
 </h2>
 
-<h4>
   <h3>What is FruitStack?</h3>
     This is a small pet project about fruits. Made for educational purposes only.
     To study the work of a client-server web application and understand how to work with Api`s.<br>
-    Implemented in the project - receiving and processing data with api, pagination, visual components(modals, spinner, custom scrollbar) and much more...
-    <h4 style="margin-top="10px"">
-    Using technologies such as:
-    </h4>
-    <h5 style="margin-top="8px"">
-    Server - .Net<br>
-    Api`s - Fruityvice (https://www.fruityvice.com), Unsplash (https://unsplash.com)<br>
-    Client - Angular, Bootstrap<br>
-    </h5>
-  <div>
-    <img width="24px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/angular_logo_icon_169595.png" alt="">
-    <img width="24px" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/microsoft-dot-net-icon.png" alt="">
-    <img width="24px" src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" alt="">
-  </div>
-</h4>
+    Implemented in the project - receiving and processing data with api, in memory cache, pagination, visual components(modals, spinner, custom scrollbar) etc.
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/homepage.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-pagination-modal.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-toast.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-about.gif?raw=true" alt="">
+    
+<h2>
+  Technologies 🛠:
+</h2>
+<h3 style="margin-top="8px"">
+  Server - .Net<br>
+  Api`s - Fruityvice (https://www.fruityvice.com), Unsplash (https://unsplash.com)<br>
+  Client - Angular, Bootstrap<br>
+</h3>
+<div>
+  <img width="24px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/angular_logo_icon_169595.png" alt="">
+  <img width="24px" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/microsoft-dot-net-icon.png" alt="">
+  <img width="24px" src="https://cdn-icons-png.flaticon.com/512/5968/5968672.png" alt="">
+</div>
 
 <h2>
   Server and Api 🔌
@@ -70,10 +73,3 @@
 <h3>FruitService:</h3>
 <img width="" src="https://user-images.githubusercontent.com/90128195/210270173-b0fa73dd-5de1-4760-acb1-7d5b1f23ec68.png" alt="">
 
-<h2>
-  Just try it yourself ℹ️
-</h2>
-<h3>
-  Get repo and try it.<br>
-  Thanks for Attention!!!
-</h3>
