@@ -47,18 +47,6 @@
 </h4>
 <h4> Fruityvice - api with a small database storing fruits</h4>
 <h4> Unsplash - api service with a large database of copyright photos</h4>
-<h3>Controller:</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210269056-07870371-f4c7-4868-bce5-5c200061169a.png" alt="">
-
-<h3>FruitService:</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210269228-22d16b78-5ce0-434a-9f25-6fb266280dc1.png" alt="">
-
-<h3>ImageService:</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210269292-13b25f76-3d09-4b9e-bde4-301dc58f2444.png" alt="">
-
-<h3>Mapper:</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210269362-efb434eb-a38e-45e5-a0d2-34b361812f26.png" alt="">
-<img width="" src="https://user-images.githubusercontent.com/90128195/210269397-40e1e9d5-a99f-4857-85b2-34e5bbcdfe74.png" alt="">
 
 <h2>
   Client 🖥️
@@ -67,9 +55,3 @@
   The client is made using angular and bootstrap styles.<br>
   Consists of several components and one service for getting fruits from the server
 </h4>
-<h3>Components</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210270130-fcf85ec8-cc39-41e7-9d99-12fb7f2bb309.png" alt="">
-
-<h3>FruitService:</h3>
-<img width="" src="https://user-images.githubusercontent.com/90128195/210270173-b0fa73dd-5de1-4760-acb1-7d5b1f23ec68.png" alt="">
-
