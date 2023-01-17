@@ -16,12 +16,7 @@
     This is a small pet project about fruits. Made for educational purposes only.
     To study the work of a client-server web application and understand how to work with Api`s.<br>
     Implemented in the project - receiving and processing data with api, in memory cache, pagination, visual components(modals, spinner, custom scrollbar) etc.
-    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/homepage.gif?raw=true" alt="">
-    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-pagination-modal.gif?raw=true" alt="">
-    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-toast.gif?raw=true" alt="">
-    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-about.gif?raw=true" alt="">
-    
-<h2>
+    <h2>
   Technologies 🛠:
 </h2>
 <h3 style="margin-top="8px"">
@@ -55,3 +50,12 @@
   The client is made using angular and bootstrap styles.<br>
   Consists of several components and one service for getting fruits from the server
 </h4>
+<h2>
+  App View💫
+</h2>
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/homepage.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-pagination-modal.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-fruits-spinner-toast.gif?raw=true" alt="">
+    <img src="https://github.com/ChaklunIvan/FruitStack/blob/master/ui/src/assets/gifs/home-to-about.gif?raw=true" alt="">
+    
+
